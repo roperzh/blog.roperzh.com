@@ -15,17 +15,15 @@ VERBATIM_SRC = $(shell find $(SRC)/verbatim/*)
 all: $(DEST) $(DEST)/css/app.css $(DEST)/js/app.js verbatim
 
 server:
-	@$(BIN)light-server -s $(DEST) -p 3838 \
-		-w "src/js/*.js,src/verbatim/** # $(REPORT)" \
-		-w "src/scss/**/*.scss # $(REPORT) # reloadcss"
+	@$(BIN)light-server --quiet \
+		-w "src/js/*.js,src/verbatim/** # $(REPORT) # no-reload" \
+		-w "src/scss/**/*.scss # $(REPORT) # no-reload"
 
 icons:
 	## Generate icons
 	# optimize svg files
 	@$(BIN)svgo $(SRC)/images/icons --enable=removeTitle --enable=removeViewBox \
 		--enable=removeDimensions
-	# convert the icons
-	@$(BIN)grunticon $(SRC)/images/icons $(DEST)/css --config=grunticon-options.json
 
 $(DEST):
 	## Create public files and dirs

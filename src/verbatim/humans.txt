@@ -1,0 +1,15 @@
+# humanstxt.org/
+# The humans responsible & technology colophon
+
+# TEAM
+
+    Roberto Dip -- Developer -- @roperzh
+
+# THANKS
+
+    The web community
+
+# TECHNOLOGY COLOPHON
+
+    CSS3, HTML5
+    Hugo, Modernizr, Normalize.css, Essential.js

@@ -1,0 +1,24 @@
+// -------------------------------------------
+//   Search form block
+// -------------------------------------------
+
+@import "__input/search-form__input";
+@import "__action/search-form__action";
+
+.search-form {
+  @include span(full);
+
+  border: {
+    bottom: 1px solid $color-border;
+  }
+
+  &__input {
+    @include span(6 of 8);
+    margin-right: 0;
+  }
+
+  &__action {
+    @include span(2 of 8);
+    @include last;
+  }
+}

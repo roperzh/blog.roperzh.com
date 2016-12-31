@@ -1,0 +1,15 @@
+// -------------------------------------------
+//   Navigation link
+// -------------------------------------------
+
+.navigation__link {
+  display: inline-block;
+
+  line-height: $measure-nav-height;
+  text: {
+    align: center;
+    transform: uppercase;
+  }
+
+  border: none;
+}

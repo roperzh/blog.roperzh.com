@@ -1,0 +1,43 @@
+// -------------------------------------------
+//   Fonts
+// -------------------------------------------
+
+$font-sans: Arial, "Helvetica Neue", Helvetica, sans-serif;
+$font-serif: TimesNewRoman, "Times New Roman", Times, Baskerville, Georgia,serif;
+$font-mono: "Courier New", Courier, "Lucida Sans Typewriter", "Lucida Typewriter", monospace;
+
+%heading-one {
+  font: {
+    family: $font-sans;
+    weight: 500;
+    size: 25px;
+  }
+}
+
+%heading-two {
+  font: {
+    family: $font-sans;
+    weight: 500;
+    size: 21px;
+  }
+
+  text-transform: uppercase;
+}
+
+%base-text {
+  font: {
+    family: $font-serif;
+    weight: 500;
+  }
+}
+
+%cta {
+  font: {
+    family: inherit;
+    size: inherit;
+  }
+
+  color: inherit;
+  text-decoration: none;
+  border-bottom: 1px solid;
+}

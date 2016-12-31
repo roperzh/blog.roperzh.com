@@ -1,0 +1,15 @@
+// -------------------------------------------
+//   Search form action
+// -------------------------------------------
+
+.search-form__action {
+  height: $measure-nav-height;
+
+  background: $color-background;
+  color: $color-contrast;
+
+  border: 1px solid $color-border {
+    top: 0;
+    bottom: 0;
+  }
+}

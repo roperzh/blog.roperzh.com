@@ -1,0 +1,25 @@
+// -------------------------------------------
+//   Colors
+// -------------------------------------------
+
+$colors: (
+  black: #3A3D42,
+  white: #FFFFFF,
+  blue: #6495ED
+);
+
+@each $item, $color in $colors {
+  .background-#{$item} {
+    background-color: $color;
+  }
+
+  .color-#{$item} {
+    color: $color;
+  }
+}
+
+$color-primary: map-get($colors, black);
+$color-secondary: map-get($colors, blue);
+$color-contrast: map-get($colors, white);
+$color-border: rgba(map-get($colors, black), 0.5);
+$color-background: map-get($colors, black);

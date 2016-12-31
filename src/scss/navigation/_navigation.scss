@@ -1,0 +1,21 @@
+// -------------------------------------------
+//   Navigation
+// -------------------------------------------
+
+@import "__link/navigation__link";
+
+.navigation {
+  @include span(full);
+
+  border: {
+    bottom: 1px solid $color-border;
+  }
+
+  &__link {
+    @include span(23%);
+
+    &:last-child {
+      @include last;
+    }
+  }
+}

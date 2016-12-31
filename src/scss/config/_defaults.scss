@@ -1,0 +1,63 @@
+// -------------------------------------------
+//   Defaults
+//     -> Base styles
+// -------------------------------------------
+
+// Apply a natural box layout model to all elements
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+html, body {
+  @extend %base-text;
+
+  color: $color-primary;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  font-weight: 500;
+  margin: 0;
+}
+
+h1 {
+  @extend %heading-one;
+  margin-bottom: 22px;
+}
+
+h2 {
+  @extend %heading-two;
+  margin-bottom: 15px;
+}
+
+p {
+  @extend %base-text;
+  line-height: 20px;
+  margin-bottom: 10px;
+}
+
+a {
+  @extend %cta;
+
+  color: black;
+  border-color: $color-secondary;
+
+  &:hover, &:focus {
+    border-width: 2px;
+  }
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+input, button {
+  border:none;
+  background-image:none;
+  background-color:transparent;
+  box-shadow: none;
+}

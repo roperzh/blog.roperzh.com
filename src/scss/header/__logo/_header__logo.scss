@@ -1,0 +1,10 @@
+// -------------------------------------------
+//   Header logo
+// -------------------------------------------
+
+.header__logo {
+  @include span(6 of 8);
+  @include pre(1 of 8);
+
+  text-align: center;
+}

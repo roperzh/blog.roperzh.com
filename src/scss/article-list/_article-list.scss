@@ -1,0 +1,24 @@
+// -------------------------------------------
+//   Article list
+// -------------------------------------------
+
+@import "__item/article-list__item";
+
+.article-list {
+  @include span(full);
+
+  &__item {
+    @include span(full);
+
+    > *:first-child {
+      @include span(6 of 8);
+    }
+
+    > *:last-child {
+      @include span(2 of 8);
+      @include last;
+
+      text-align: right;
+    }
+  }
+}

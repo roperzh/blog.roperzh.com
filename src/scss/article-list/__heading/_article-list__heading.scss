@@ -1,8 +1,9 @@
 // -------------------------------------------
-//   Search form input
+//   Article list heading
 // -------------------------------------------
 
-.search-form__input {
-  height: 100%;
-  outline: none;
+.article-list__heading {
+  time {
+    @extend %small-text;
+  }
 }

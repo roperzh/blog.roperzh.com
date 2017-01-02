@@ -47,4 +47,4 @@ $(JS):: $(JS_SRC)
 verbatim:: $(VERBATIM_SRC)
 	## Copy static files
 	# copy all static files verbatim to the dest folder
-	@cp $? $(DEST)/
+	@cp -r $? $(DEST)/

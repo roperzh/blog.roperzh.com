@@ -5,7 +5,9 @@
 .article-list__item {
   padding: 30px 0;
 
-  border: {
-    bottom: 1px solid $color-border;
+  &:not(:last-child) {
+    border: {
+      bottom: 1px solid $color-border;
+    }
   }
 }

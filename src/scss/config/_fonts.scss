@@ -31,6 +31,12 @@ $font-mono: "Courier New", Courier, "Lucida Sans Typewriter", "Lucida Typewriter
   }
 }
 
+%small-text {
+  @extend %base-text;
+
+  font-size: 13px;
+}
+
 %cta {
   font: {
     family: inherit;

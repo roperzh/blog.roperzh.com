@@ -1,0 +1,9 @@
+{{ partial "header.html" . }}
+
+<section class="article-list">
+  {{ range .Data.Pages.ByPublishDate }}
+    {{ .Render "summary"}}
+  {{ end }}
+</section>
+
+{{ partial "footer.html" . }}

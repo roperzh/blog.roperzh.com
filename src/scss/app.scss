@@ -3,6 +3,15 @@
 // *************************************
 
 // -------------------------------------
+//   Vendor
+// -------------------------------------
+
+@import
+  "node_modules/node.normalize.scss/normalize",
+  "node_modules/susy/sass/susy"
+  ;
+
+// -------------------------------------
 //   Config
 // -------------------------------------
 
@@ -15,23 +24,24 @@
   ;
 
 // -------------------------------------
-//   Vendor
-// -------------------------------------
-
-@import
-  "node_modules/node.normalize.scss/normalize",
-  "node_modules/susy/sass/susy"
-  ;
-
-// -------------------------------------
 //   Blocks
 // -------------------------------------
 
 @import
   "search-form/search-form",
   "article-list/article-list",
+  "article-detail/article-detail",
   "header/header",
   "navigation/navigation",
   "container/container",
   "footer/footer"
   ;
+
+
+.subnav {
+  @include span(full);
+
+  .teste {
+    @include span(3 of 8);
+  }
+}

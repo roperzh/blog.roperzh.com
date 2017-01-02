@@ -5,6 +5,7 @@
 .navigation__link {
   display: inline-block;
 
+  font-size: 22px;
   line-height: $measure-nav-height;
   text: {
     align: center;
@@ -12,4 +13,8 @@
   }
 
   border: none;
+
+  &_light {
+    font-size: 13px;
+  }
 }

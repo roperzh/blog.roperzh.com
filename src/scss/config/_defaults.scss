@@ -17,9 +17,13 @@ html, body {
   -webkit-tap-highlight-color: rgba(0,0,0,0);
 }
 
-h1, h2, h3, h4, h5, h6, p {
+h1, h2, h3, h4, h5, h6 {
   font-weight: 500;
   margin: 0;
+
+  a {
+    border: none;
+  }
 }
 
 h1 {
@@ -35,6 +39,7 @@ h2 {
 p {
   @extend %base-text;
   line-height: 20px;
+  font-weight: 500;
   margin-bottom: 10px;
 }
 
@@ -61,3 +66,9 @@ input, button {
   background-color:transparent;
   box-shadow: none;
 }
+
+code, pre {
+  font-size: 14px;
+  padding: 15px;
+}
+

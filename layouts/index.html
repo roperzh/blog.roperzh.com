@@ -1,44 +1,11 @@
 {{ partial "header.html" . }}
 
 <section class="article-list">
-  <article class="article-list__item">
-    <header>
-      <h2>Title</h2>
-      <p>Lorem ipsum dolor sit <a href="#">amet</a>, consectetur adipisicing elit. Beatae natus praesentium maxime vel, ipsam, odio. Deserunt fugit, a, magni eos esse optio, minima voluptatibus quaerat voluptates nihil nisi ipsum facilis.</p>
-      <a href="#">More+</a>
-    </header>
-
-    <img src="/150x150.png" alt="230">
-  </article>
-
-  <article class="article-list__item">
-
-    <header>
-      <h2>Title</h2>
-      <p>Lorem ipsum dolor sit <a href="#">amet</a>, consectetur adipisicing elit. Beatae natus praesentium maxime vel, ipsam, odio. Deserunt fugit, a, magni eos esse optio, minima voluptatibus quaerat voluptates nihil nisi ipsum facilis.</p>
-      <a href="#">More+</a>
-    </header>
-    <img src="/150x150.png" alt="230">
-  </article>
-
-  <article class="article-list__item">
-    <header>
-      <h2>Title</h2>
-      <p>Lorem ipsum dolor sit <a href="#">amet</a>, consectetur adipisicing elit. Beatae natus praesentium maxime vel, ipsam, odio. Deserunt fugit, a, magni eos esse optio, minima voluptatibus quaerat voluptates nihil nisi ipsum facilis.</p>
-      <a href="#">More+</a>
-    </header>
-
-    <img src="/150x150.png" alt="230">
-  </article>
-
-  <article class="article-list__item">
-    <header>
-      <h2>Title</h2>
-      <p>Lorem ipsum dolor sit <a href="#">amet</a>, consectetur adipisicing elit. Beatae natus praesentium maxime vel, ipsam, odio. Deserunt fugit, a, magni eos esse optio, minima voluptatibus quaerat voluptates nihil nisi ipsum facilis.</p>
-      <a href="#">More+</a>
-    </header>
-    <img src="/150x150.png" alt="230">
-
-  </article>
+  {{ range .Paginator.Pages }}
+      {{ .Render "summary"}}
+  {{ end }}
 </section>
+
+<!-- TODO: add a paginator  -->
+
 {{ partial "footer.html" . }}

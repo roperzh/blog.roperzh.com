@@ -1,0 +1,9 @@
+// -------------------------------------------
+//   Article detail
+// -------------------------------------------
+
+@import "__illustration/article-detail__illustration";
+
+.article-detail {
+  @include span(full);
+}

@@ -1,0 +1,17 @@
+{{ partial "header.html" . }}
+
+<article class="article-detail">
+  <header>
+    <figure class="article-detail__illustration">
+      <img src="/icons/{{ .Params.icon }}.svg" alt="{{ .Params.icon }}">
+    </figure>
+
+    <h1>{{ .Title }}</h1>
+  </header>
+
+  <section>
+    {{ .Content }}
+  </section>
+</article>
+
+{{ partial "footer.html" . }}

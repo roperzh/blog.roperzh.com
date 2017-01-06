@@ -7,10 +7,15 @@
 
   font-size: 13px;
   line-height: $measure-nav-height;
+  color: currentColor;
   text: {
     align: center;
     transform: uppercase;
   }
 
   border: none;
+
+  &:hover {
+    color: $color-secondary;
+  }
 }

@@ -1,0 +1,20 @@
+// -------------------------------------------
+//   Logo
+// -------------------------------------------
+
+.logo {
+  display: inline-block;
+  border: none;
+
+  &__image {
+    display: inline-block;
+
+    .a {
+      fill: $color-primary;
+    }
+
+    &:hover .a {
+      fill: $color-secondary;
+    }
+  }
+}

@@ -21,6 +21,15 @@
     margin-right: gutter() * 2;
   }
 
+  .logo {
+    @include span(4 of 8);
+
+    &__image {
+      max-width: 180px;
+      margin-top: 10px;
+    }
+  }
+
   &_big {
     padding: 10px 0;
   }

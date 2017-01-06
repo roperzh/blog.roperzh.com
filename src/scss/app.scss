@@ -32,15 +32,7 @@
   "article-list/article-list",
   "article-detail/article-detail",
   "navigation/navigation",
+  "logo/logo",
   "container/container",
   "footer/footer"
   ;
-
-
-.subnav {
-  @include span(full);
-
-  .teste {
-    @include span(3 of 8);
-  }
-}

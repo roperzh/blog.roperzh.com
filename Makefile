@@ -12,7 +12,7 @@ JS = $(DEST)/%.js
 
 VERBATIM_SRC = $(shell find $(SRC)/verbatim/*)
 
-all: $(DEST) $(DEST)/css/app.css $(DEST)/js/app.js verbatim svg
+all: $(DEST) $(DEST)/css/app.css $(DEST)/js/app.js verbatim
 
 server:
 	@$(BIN)light-server --quiet \

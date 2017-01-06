@@ -13,8 +13,6 @@
     "node-sass": "^3.13.0",
     "node.normalize.scss": "^3.0.3",
     "postcss-cli": "^2.6.0",
-    "rollup": "^0.37.0",
-    "rollup-plugin-buble": "^0.15.0",
     "susy": "^2.2.12",
     "svgo": "^0.7.1",
     "tap-summary": "^3.0.1"

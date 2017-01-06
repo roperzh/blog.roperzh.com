@@ -41,8 +41,8 @@ $(CSS):: $(CSS_SRC)
 
 $(JS):: $(JS_SRC)
 	## Build JS files
-	# compile ES6 files
-	$(BIN)rollup -c  -- $(SRC)/js/$(*F).js > $@
+	# copy JS source
+	cp $(SRC)/js/$(*F).js $@
 
 verbatim:: $(VERBATIM_SRC)
 	## Copy static files

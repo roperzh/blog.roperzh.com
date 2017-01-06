@@ -6,4 +6,8 @@
 
 .article-detail {
   @include span(full);
+
+  &__content {
+    @extends %base-text;
+  }
 }

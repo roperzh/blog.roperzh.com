@@ -9,9 +9,11 @@
     <h1>{{ .Title }}</h1>
   </header>
 
-  <section>
+  <section class="article-detail__content">
     {{ .Content }}
   </section>
 </article>
+
+{{ partial "comments.html" . }}
 
 {{ partial "footer.html" . }}

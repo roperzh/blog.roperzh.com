@@ -1,0 +1,27 @@
+// -------------------------------------------
+//   Search form block
+// -------------------------------------------
+
+@import
+  "__input/form__input",
+  "__action/form__action",
+  "__group/form__group";
+
+.form {
+  @include span(full);
+
+  &__group {
+    @include span(full);
+
+    margin: 10px 0;
+  }
+
+  &__input {
+    @include span(full);
+    width: 100%!important;
+  }
+
+  &__action {
+    float: right;
+  }
+}

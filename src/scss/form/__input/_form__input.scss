@@ -2,7 +2,13 @@
 //   Search form input
 // -------------------------------------------
 
-.search-form__input {
-  height: 100%;
+.form__input {
+  display: block;
+  margin-top: 5px;
+  padding: 5px;
+
   outline: none;
+  border: 1px solid $color-border;
+
+  resize: vertical;
 }

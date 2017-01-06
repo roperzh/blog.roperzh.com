@@ -1,0 +1,48 @@
+<section class="comments">
+  <ul class="comments__list">
+    <li class="comments__comment">
+      <header>
+        <figure class="comments__avatar">
+          <span>H</span>
+        </figure>
+
+        <div class="comments__user">
+          <h3>Hernesto Hoost</h3>
+          <time>Sat, Oct 22, 2016</time>
+        </div>
+      </header>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo labore culpa libero nulla ipsum, necessitatibus consequuntur doloribus consectetur! Repellat ex saepe explicabo rem doloremque tempora tenetur magni! Nihil, quidem, omnis.</p>
+    </li>
+
+    <li class="comments__comment">
+      <header>
+        <figure class="comments__avatar">
+          <span>R</span>
+        </figure>
+
+        <div class="comments__user">
+          <h3>Roberto Dip</h3>
+          <time>Sat, Oct 24, 2016</time>
+        </div>
+      </header>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo labore culpa libero nulla ipsum, necessitatibus consequuntur doloribus consectetur! Repellat ex saepe explicabo rem doloremque tempora tenetur magni! Nihil, quidem, omnis.</p>
+    </li>
+
+  </ul>
+
+  <h3>Leave a comment</h3>
+
+  <form action="/comments/new" class="form">
+    <div class="form__group">
+      <label for="name">Name</label>
+      <input type="text" id="name" name="name" class="form__input">
+    </div>
+
+    <div class="form__group">
+      <label for="message">Message</label>
+      <textarea name="message" id="message" rows="5" class="form__input"></textarea>
+    </div>
+
+    <button class="form__action">Send</button>
+  </form>
+</section>

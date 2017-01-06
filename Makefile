@@ -12,17 +12,16 @@ JS = $(DEST)/%.js
 
 VERBATIM_SRC = $(shell find $(SRC)/verbatim/*)
 
-all: $(DEST) $(DEST)/css/app.css $(DEST)/js/app.js verbatim
+all: $(DEST) $(DEST)/css/app.css $(DEST)/js/app.js verbatim svg
 
 server:
 	@$(BIN)light-server --quiet \
 		-w "src/js/*.js,src/verbatim/** # $(REPORT) # no-reload" \
 		-w "src/scss/**/*.scss # $(REPORT) # no-reload"
 
-icons:
-	## Generate icons
-	# optimize svg files
-	@$(BIN)svgo $(SRC)/images/icons --enable=removeTitle --enable=removeViewBox \
+svg:
+	## Prepare svg files
+	@$(BIN)svgo $(SRC)/verbatim/icons --enable=removeTitle --enable=removeViewBox \
 		--enable=removeDimensions
 
 $(DEST):

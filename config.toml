@@ -1,6 +1,6 @@
 languageCode = "en-us"
-title = ""
-baseurl = ""
+title = "Roperzh Blog"
+baseurl = "http://blog.roperzh.com/"
 paginate = 4
 pygmentsCodeFences = "true"
 PygmentsStyle = "trac"

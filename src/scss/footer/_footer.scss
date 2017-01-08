@@ -4,8 +4,9 @@
 
 .footer {
   @include span(full);
+  @include ritmo-paddings(5);
 
-  margin: 25px 0 0 0;
+  margin-top: ritmo(8);
 
   border: {
     top: 1px solid $color-border;

@@ -5,42 +5,61 @@
 .comments {
   @include span(full);
 
-  margin: 30px 0;
-  padding: 30px 0;
+  padding: ritmo(4) 0;
+
   border-top: 1px solid $color-border;
 
   header {
     @include span(full);
-    margin-bottom: 10px;
+  }
+
+  &__list {
+    margin: 0;
+    padding: ritmo(4) 0;
   }
 
   &__comment {
-    margin-bottom: 40px;
+    border-bottom: 1px solid $color-border;
+    margin-bottom: ritmo(4);
+    padding-bottom: ritmo(4);
+
+    &:last-of-type {
+      border: none;
+    }
+
+    p {
+      font-size: 16px;
+    }
+  }
+
+  &__comment-content {
+    @extend %small-text;
   }
 
   &__user {
-    margin-left: 45px;
 
     h3 {
-      font-size: 22px;
-      line-height: 22px;
-    }
-
-    time {
-      font-size: 13px;
+      @extend %base-text;
+      margin-bottom: -2px;
+      font-family: $font-sans;
     }
   }
 
   &__avatar {
-    float: left;
-    margin: 0;
+    @extend %heading-three;
+
     display: inline-block;
-    background: #3A3D42;
-    width: 38px;
-    height: 38px;
+    float: left;
+    width: ritmo(8);
+    height: ritmo(8);
+    margin-right: ritmo(4);
+    margin-bottom: ritmo(4);
+
+    background: $color-background;
+    color: $color-contrast;
+
+    line-height: ritmo(8);
     text-align: center;
     vertical-align: middle;
-    color: white;
-    font-size: 35px;
   }
 }

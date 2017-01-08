@@ -12,13 +12,14 @@
 
   &__group {
     @include span(full);
-
-    margin: 10px 0;
+    margin-bottom: ritmo(4);
   }
 
   &__input {
     @include span(full);
-    width: 100%!important;
+
+    width: 100%;
+    margin-top: ritmo(2);
   }
 
   &__action {

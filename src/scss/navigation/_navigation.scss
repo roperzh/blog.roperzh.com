@@ -7,6 +7,11 @@
 .navigation {
   @include span(full);
 
+  height: ritmo(12);
+
+  line-height: ritmo(12);
+  margin-bottom: ritmo(8);
+
   border: {
     bottom: 1px solid $color-border;
   }
@@ -18,19 +23,17 @@
   }
 
   &__link {
-    margin-right: gutter() * 2;
+    margin: 0 5px;
   }
 
   .logo {
     @include span(4 of 8);
+    display: block;
 
     &__image {
       max-width: 180px;
-      margin-top: 10px;
+      vertical-align: middle;
+      display: inline-block;
     }
-  }
-
-  &_big {
-    padding: 10px 0;
   }
 }

@@ -3,7 +3,7 @@
     <h2><a href="{{ .Permalink }}">{{ .Title }} {{ if .Draft }}:: DRAFT{{end}}</a></h2>
       {{ .Summary }}
     <p><time>{{ .Date.Format "Mon, Jan 2, 2006" }}</time></p>
-    <a href='{{ .Permalink }}'><nobr>More +</nobr></a>
+    <a href='{{ .Permalink }}'>more +</a>
   </header>
 
   <a href='{{ .Permalink }}' class="article-list__illustration">

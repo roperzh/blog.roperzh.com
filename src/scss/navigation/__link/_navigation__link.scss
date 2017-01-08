@@ -3,11 +3,10 @@
 // -------------------------------------------
 
 .navigation__link {
+  @extend %small-text;
+
   display: inline-block;
 
-  font-size: 13px;
-  line-height: $measure-nav-height;
-  color: currentColor;
   text: {
     align: center;
     transform: uppercase;

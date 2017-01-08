@@ -10,6 +10,7 @@
 
 .article-list {
   @include span(full);
+  @extend %base-text;
 
   &__item {
     @include span(full);

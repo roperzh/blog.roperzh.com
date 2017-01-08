@@ -2,40 +2,50 @@
 //   Fonts
 // -------------------------------------------
 
+$base-font-size: 18px;
+
 $font-sans: Arial, "Helvetica Neue", Helvetica, sans-serif;
 $font-serif: TimesNewRoman, "Times New Roman", Times, Baskerville, Georgia,serif;
 $font-mono: "Courier New", Courier, "Lucida Sans Typewriter", "Lucida Typewriter", monospace;
 
 %heading-one {
-  font: {
-    family: $font-sans;
-    weight: 500;
-    size: 25px;
-  }
+  @include ritmo-font-size(36.491px);
+  @include ritmo-bottom-margin(4);
+  margin-top: 0;
+  font-family: $font-sans;
 }
 
 %heading-two {
-  font: {
-    family: $font-sans;
-    weight: 500;
-    size: 21px;
-  }
+  @include ritmo-font-size(25.629px);
+  @include ritmo-bottom-margin(4);
+  margin-top: 0;
+  font-family: $font-sans;
+}
 
-  text-transform: uppercase;
+%heading-three {
+  @include ritmo-font-size(20.25px);
+  @include ritmo-bottom-margin(4);
+  margin-top: 0;
+  font-family: $font-sans;
 }
 
 %base-text {
-  font: {
-    family: $font-serif;
-    weight: 500;
-    size: 18px;
-  }
+  @include ritmo-font-size($base-font-size);
+  @include ritmo-bottom-margin();
+  margin-top: 0;
+  font-family: $font-serif;
 }
 
 %small-text {
-  @extend %base-text;
+  @include ritmo-font-size(16px);
+  @include ritmo-bottom-margin(0.8);
+  margin-top: 0;
+}
 
-  font-size: 13px;
+%extra-small-text {
+  @include ritmo-font-size(14.222px);
+  @include ritmo-bottom-margin(0.5);
+  margin-top: 0;
 }
 
 %cta {

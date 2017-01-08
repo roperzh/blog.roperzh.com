@@ -7,7 +7,21 @@
 .article-detail {
   @include span(full);
 
+  margin-bottom: ritmo(11);
+
+  header {
+    @include span(full);
+  }
+
+  &__illustration {
+    margin: 0 auto ritmo(8);
+  }
+
   &__content {
-    @extends %base-text;
+    @include span(full);
+  }
+
+  .highlight pre {
+    margin: ritmo(4) 0;
   }
 }

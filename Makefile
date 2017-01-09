@@ -14,6 +14,13 @@ VERBATIM_SRC = $(shell find $(SRC)/verbatim/*)
 
 all: $(DEST) $(DEST)/css/app.css $(DEST)/js/app.js verbatim
 
+build: all
+	## Optimize files for production
+	# minify css
+	@cat $(DEST)/css/app.css | $(BIN)uglifycss --debug > $(DEST)/css/app.min.css
+	# minify js
+	@$(BIN)uglifyjs -m -c --lint $(DEST)/js/app.js > $(DEST)/js/app.min.js
+
 server:
 	@$(BIN)light-server --quiet \
 		-w "src/js/*.js,src/verbatim/** # $(REPORT) # no-reload" \

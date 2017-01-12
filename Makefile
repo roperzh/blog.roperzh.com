@@ -16,13 +16,13 @@ all: $(DEST) $(DEST)/css/app.css $(DEST)/js/app.js verbatim
 
 build: clean all
 	## Optimize files for production
-	@hugo --quiet
+	@hugo
 	@$(BIN)uncss public/**/*.html \
 		| $(BIN)postcss --use autoprefixer \
 		| $(BIN)uglifycss --debug > $(DEST)/css/app.css
 	# minify js
 	@$(BIN)uglifyjs -m -c --lint $(DEST)/js/app.js > $(DEST)/js/app.min.js
-	@hugo --quiet
+	@hugo
 
 server:
 	@$(BIN)light-server --quiet \

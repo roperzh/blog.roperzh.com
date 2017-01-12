@@ -1,48 +1,44 @@
+
 <section class="comments">
   <h2>Comments</h2>
 
   <ul class="comments__list">
-    <li class="comments__comment">
-      <header>
-        <figure class="comments__avatar">
-          <span>H</span>
-        </figure>
+    {{ if isset $.Site.Data.comments .UniqueID }}
+      {{ range index $.Site.Data.comments .UniqueID }}
+        <li class="comments__comment">
+          <header>
+            <figure class="comments__avatar">
+              <span>{{slicestr .name 0 1}}</span>
+            </figure>
 
-        <div class="comments__user">
-          <h3>Hernesto Hoost</h3>
-          <time>Sat, Oct 22, 2016</time>
-        </div>
-      </header>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo labore culpa libero nulla ipsum, necessitatibus consequuntur doloribus consectetur! Repellat ex saepe explicabo rem doloremque tempora tenetur magni! Nihil, quidem, omnis.</p>
-    </li>
-
-    <li class="comments__comment">
-      <header>
-        <figure class="comments__avatar">
-          <span>R</span>
-        </figure>
-
-        <div class="comments__user">
-          <h3>Roberto Dip</h3>
-          <time>Sat, Oct 24, 2016</time>
-        </div>
-      </header>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo labore culpa libero nulla ipsum, necessitatibus consequuntur doloribus consectetur! Repellat ex saepe explicabo rem doloremque tempora tenetur magni! Nihil, quidem, omnis.</p>
-    </li>
-
+            <div class="comments__user">
+              <h3>{{ .name }}</h3>
+              <time>{{ dateFormat "02/01/2006" .date }}</time>
+            </div>
+          </header>
+          <p>{{ .message | markdownify }}</p>
+        </li>
+      {{ end }}
+    {{ else }}
+      <p>There are no comments yet!</p>
+    {{ end }}
   </ul>
 
   <h2>Leave a comment</h2>
 
-  <form action="/comments/new" class="form">
+  <form method="POST" action="https://api.staticman.net/v2/entry/roperzh/blog.roperzh.com/master/comments" class="form">
+    <input name="options[origin]" type="hidden" value="{{ .Permalink }}">
+    <input name="options[redirect]" type="hidden" value="https://blog.roperzh.com">
+    <input name="options[slug]" type="hidden" value="{{ .UniqueID }}">
+
     <div class="form__group">
       <label for="name">Name</label>
-      <input type="text" id="name" name="name" class="form__input">
+      <input type="text" id="name" name="fields[name]" class="form__input">
     </div>
 
     <div class="form__group">
       <label for="message">Message</label>
-      <textarea name="message" id="message" rows="5" class="form__input"></textarea>
+      <textarea name="fields[message]" id="message" rows="5" class="form__input"></textarea>
     </div>
 
     <button class="form__action">Send</button>

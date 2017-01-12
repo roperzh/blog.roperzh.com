@@ -14,12 +14,15 @@ VERBATIM_SRC = $(shell find $(SRC)/verbatim/*)
 
 all: $(DEST) $(DEST)/css/app.css $(DEST)/js/app.js verbatim
 
-build: all
+build: clean all
 	## Optimize files for production
-	# minify css
-	@cat $(DEST)/css/app.css | $(BIN)uglifycss --debug > $(DEST)/css/app.min.css
+	@hugo --quiet
+	@$(BIN)uncss public/**/*.html \
+		| $(BIN)postcss --use autoprefixer \
+		| $(BIN)uglifycss --debug > $(DEST)/css/app.css
 	# minify js
 	@$(BIN)uglifyjs -m -c --lint $(DEST)/js/app.js > $(DEST)/js/app.min.js
+	@hugo --quiet
 
 server:
 	@$(BIN)light-server --quiet \
@@ -30,6 +33,13 @@ svg:
 	## Prepare svg files
 	@$(BIN)svgo $(SRC)/verbatim/icons --enable=removeTitle --enable=removeViewBox \
 		--enable=removeDimensions
+
+clean:
+	## Clean files
+	# Remove static dir
+	@rm -rf static
+	# Remove public dir
+	@rm -rf public
 
 $(DEST):
 	## Create public files and dirs
@@ -42,8 +52,6 @@ $(CSS):: $(CSS_SRC)
 	## Build CSS files
 	# compile sass files
 	@$(BIN)node-sass --output $(@D) $(SRC)/scss/$(*F).scss $(@D)/$(@F)
-	# run autoprefixer
-	# @$(BIN)postcss --use autoprefixer $(@D)/$(@F) -d $(@D)
 
 $(JS):: $(JS_SRC)
 	## Build JS files

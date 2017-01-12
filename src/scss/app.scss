@@ -9,7 +9,7 @@
 @import
   "node_modules/node.normalize.scss/normalize",
   "node_modules/susy/sass/susy",
-  "node_modules/ritmo/_ritmo.scss"
+  "node_modules/ritmo/ritmo"
   ;
 
 // -------------------------------------
@@ -20,8 +20,9 @@
   "config/grid",
   "config/colors",
   "config/fonts",
-  "config/defaults",
-  "config/measures"
+  "config/measures",
+  "config/mixins",
+  "config/defaults"
   ;
 
 // -------------------------------------

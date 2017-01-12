@@ -17,7 +17,7 @@ $font-mono: "Courier New", Courier, "Lucida Sans Typewriter", "Lucida Typewriter
 
 %heading-two {
   @include ritmo-font-size(25.629px);
-  @include ritmo-bottom-margin(4);
+  @include ritmo-bottom-margin(6);
   margin-top: 0;
   font-family: $font-sans;
 }

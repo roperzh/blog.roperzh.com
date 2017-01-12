@@ -21,6 +21,11 @@ html {
   // background-size: 100% 1.125rem;
   // background-size: 100% 1.38889rem;
   font-size: 16px;
+
+  @include breakpoint(mobile) {
+    padding: 0 15px;
+    font-size: 14px;
+  }
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -51,13 +56,12 @@ p {
 a {
   @extend %cta;
 
-  // color: $color-secondary;
   border-color: $color-secondary;
   border-width: 2px;
 
   &:hover, &:focus {
-    color: $color-primary;
-    border-color: $color-primary;
+    color: $color-secondary;
+    border: none;
   }
 }
 

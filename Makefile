@@ -12,17 +12,17 @@ JS = $(DEST)/%.js
 
 VERBATIM_SRC = $(shell find $(SRC)/verbatim/*)
 
+DEST_HTML = $(shell find public -name '*.html')
+
 all: $(DEST) $(DEST)/css/app.css $(DEST)/js/app.js verbatim
 
-build: clean all
+build: all
 	## Optimize files for production
-	@hugo
-	@$(BIN)uncss public/**/*.html \
+	@$(BIN)uncss --htmlroot public --stylesheets /css/app.css public/**/*.html \
 		| $(BIN)postcss --use autoprefixer \
-		| $(BIN)uglifycss --debug > $(DEST)/css/app.css
-	# minify js
-	@$(BIN)uglifyjs -m -c --lint $(DEST)/js/app.js > $(DEST)/js/app.min.js
-	@hugo
+		> $(DEST)/css/app.css
+	@hugo -D
+	@make $(DEST_HTML)
 
 server:
 	@$(BIN)light-server --quiet \
@@ -58,7 +58,13 @@ $(JS):: $(JS_SRC)
 	# copy JS source
 	cp $(SRC)/js/$(*F).js $@
 
+$(DEST_HTML):
+	@$(BIN)juice --web-resources-relative-to public --css public/css/app.css $@ $@
+	@cat $@ | $(BIN)html-minifier -o $@ -c .htmlminifyrc
+
 verbatim:: $(VERBATIM_SRC)
 	## Copy static files
 	# copy all static files verbatim to the dest folder
 	@cp -r $? $(DEST)/
+
+.PHONY: $(DEST_HTML)

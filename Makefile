@@ -18,11 +18,11 @@ all: $(DEST) $(DEST)/css/app.css $(DEST)/js/app.js verbatim
 
 build: all
 	## Optimize files for production
+	@make public
 	@$(BIN)uncss --htmlroot public --stylesheets /css/app.css public/**/*.html \
 		| $(BIN)postcss --use autoprefixer \
 		> $(DEST)/css/app.css
-	@hugo -D
-	@make $(DEST_HTML)
+	@make public $(DEST_HTML)
 
 server:
 	@$(BIN)light-server --quiet \
@@ -67,4 +67,7 @@ verbatim:: $(VERBATIM_SRC)
 	# copy all static files verbatim to the dest folder
 	@cp -r $? $(DEST)/
 
-.PHONY: $(DEST_HTML)
+public:
+	@cp -r $(DEST)/* $@
+
+.PHONY: $(DEST_HTML) public

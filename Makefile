@@ -19,7 +19,7 @@ all: $(DEST) $(DEST)/css/app.css $(DEST)/js/app.js verbatim
 build: all
 	## Optimize files for production
 	@make public
-	@$(BIN)uncss --htmlroot public --stylesheets /css/app.css public/**/*.html \
+	@$(BIN)uncss --htmlroot public public/**/**/*.html public/**/*.html \
 		| $(BIN)postcss --use autoprefixer \
 		> $(DEST)/css/app.css
 	@make public $(DEST_HTML)
@@ -59,8 +59,10 @@ $(JS):: $(JS_SRC)
 	cp $(SRC)/js/$(*F).js $@
 
 $(DEST_HTML):
-	@$(BIN)juice --web-resources-relative-to public --css public/css/app.css $@ $@
-	@cat $@ | $(BIN)html-minifier -o $@ -c .htmlminifyrc
+	@$(BIN)inline-source --compress false --root public $@ \
+		| $(BIN)html-minifier -o $@.tmp -c .htmlminifyrc
+	@mv $@.tmp $@
+	@rm -rf $@.tmp
 
 verbatim:: $(VERBATIM_SRC)
 	## Copy static files

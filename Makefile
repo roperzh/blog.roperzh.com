@@ -72,4 +72,9 @@ verbatim:: $(VERBATIM_SRC)
 public:
 	@cp -r $(DEST)/* $@
 
+deploy: clean
+	@hugo -D
+	@make build
+	@$(BIN)netlify deploy
+
 .PHONY: $(DEST_HTML) public
